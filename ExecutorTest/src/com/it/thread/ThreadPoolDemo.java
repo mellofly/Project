@@ -28,8 +28,12 @@ public class ThreadPoolDemo {
         //使用自定义的线程池：其实就是调用原始方法底层调用的方法。
         ThreadPoolExecutor executorService3 = new ThreadPoolExecutor(10,20,0l, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(10));
-        for(int i=1;i<100;i++){
-            executorService3.submit(new MyTask(i));
+        try {
+            for (int i = 1; i < 100; i++) {
+                executorService3.submit(new MyTask(i));
+            }
+        }catch(Exception e){
+            System.out.println("报错信息"+e.getMessage());
         }
     }
 }
