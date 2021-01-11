@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mybook.mapper.FriendMapper" >
+	<!-- 查看好友列表 -->
+	<select id="selectfriend" parameterType="java.lang.String" resultType="java.lang.String" >
+		select user_name from friend
+		where userapply=#{_parameter}
+	</select>
+	<!-- 查看是否是好友 -->
+	<select id="selectIsfriend" parameterType="cn.mybook.po.Friend" resultType="java.lang.Integer">
+		select count(*) from friend
+		where user_name=#{user_name} and userapply=#{userapply}
+	</select>
+	<!-- 删除好友 -->
+	<delete id="delectfriend" parameterType="cn.mybook.po.Friend">
+		delete from friend
+		where user_name=#{user_name} and userapply=#{userapply}
+	</delete>
+	<!-- 添加申请 -->
+	<insert id="inserapplyfriend" parameterType="cn.mybook.po.Friend">
+		insert into friend ( user_name, agree, userapply)
+   	 values (#{user_name,jdbcType=VARCHAR},#{agree,jdbcType=INTEGER},#{userapply,jdbcType=VARCHAR})
+	</insert>
+</mapper>

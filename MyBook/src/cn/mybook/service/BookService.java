@@ -1,0 +1,16 @@
+package cn.mybook.service;
+
+import java.util.List;
+
+import cn.mybook.po.Book;
+
+public interface BookService {
+	//查询书籍列表通过名字
+    public List<Book> selectListByname(String name)throws Exception;
+  //查询书籍列表通过名字
+    public Book selectByname(String name)throws Exception;
+    //查询书籍列表通过flag
+    public List<Book> selectListByFlag(String flag)throws Exception;
+  //查询书籍列表通过flag
+    public Book selectByFlag(String flag)throws Exception;
+}

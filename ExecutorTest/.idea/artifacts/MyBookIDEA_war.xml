@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MyBookIDEA:war">
+    <output-path>$PROJECT_DIR$/../MyBookIDEA/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MyBookIDEA</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MyBookIDEA.war">
+      <element id="artifact" artifact-name="MyBookIDEA:war exploded" />
+    </root>
+  </artifact>
+</component>

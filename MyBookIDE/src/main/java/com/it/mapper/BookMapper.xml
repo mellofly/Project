@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mybook.mapper.BookMapper" >
+	<!-- 查询书籍列表通过bookflag-->
+	<sql id="findBybookflag">
+		<if test="_parameter!=null and _parameter!=''">
+			bookflag like '%${_parameter}%'
+		</if>
+	</sql>
+	<!-- 通过书名查询书籍 -->
+	<sql id="findByName">
+		<if test="name!=null and name!=''">
+			name =#{name}
+		</if>
+	</sql>
+  <!-- 查询书籍列表通过bookflag-->
+  <select id="selectListByFlag" resultType="com.it.po.Book" parameterType="java.lang.String" >
+    select * from book 
+   <where>
+    	<include refid="findBybookflag"></include>
+    </where> 
+  </select>
+  <!-- 查询书籍通过bookflag-->
+  <select id="selectByFlag" resultType="com.it.po.Book" parameterType="java.lang.String" >
+    select * from book 
+   	where bookflag=#{flag}
+  </select>
+   <!-- 通过关键词查询书籍 -->
+  <select id="selectListByname" resultType="com.it.po.Book" parameterType="java.lang.String" >
+    select * from book
+  	where name like '%${_parameter}%'
+  </select>
+   <!-- 通过关键词查询书籍 -->
+  <select id="selectByname" resultType="com.it.po.Book" parameterType="java.lang.String" >
+    select * from book
+    <where>
+    	<include refid="findByName"></include>
+    </where>
+  </select>
+</mapper>

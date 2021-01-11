@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.it.mapper.CommentMapper" >
+	<!-- 根据flag查询评论内容 -->
+	<select id="selectCommentByflag" parameterType="java.lang.String" resultType="com.it.po.Comment1">
+		select `comment`.id as id,flag,message,`user`.id as person,user_name,time,note from `comment`,`user`
+		where flag=#{flag} and note='0'and `comment`.name is NULL and `comment`.user_name=`user`.name
+	</select>
+	<!-- 根据flag查询章节的笔记内容 -->
+	<select id="selectNoteByflag" parameterType="java.lang.String" resultType="com.it.po.Comment1">
+		select `comment`.id as id,flag,message,`user`.id as person,user_name,time,note from `comment`,`user`
+		where flag = #{flag} and note ='1' and `comment`.name is NULL and `comment`.user_name=`user`.name
+	</select>
+	<!-- 根据笔记进行笔记的评论的查找-->
+	<select id="selectCommentByNote" parameterType="com.it.po.Comment1" resultType="com.it.po.Comment">
+		SELECT `comment`.id as id,flag,`comment`.name,message,`user`.id as person,user_name,time ,note FROM `comment`,`user`
+		where comment.flag=#{flag} and comment.name=#{user_name} and note='1' and `comment`.user_name=`user`.name
+	</select>
+	
+	<!-- 根据评论进行评论的评论的查找-->
+	<select id="selectCommentByComment" parameterType="com.it.po.Comment" resultType="com.it.po.Comment">
+		SELECT `comment`.id as id,flag,`comment`.name,message,`user`.id as person,user_name,time ,note FROM `comment`,`user`
+		where comment.flag=#{flag} and comment.name=#{user_name} and note='0' and `comment`.user_name=`user`.name
+	</select>
+	
+	
+	<!-- 根据名字进行笔记的查找-->
+	<select id="selectNoteByName" parameterType="java.lang.String" resultType="com.it.po.Comment1">
+		select * from comment
+		where comment.user_name=#{_parameter} and note ='1'
+	</select>
+	<!-- 根据名字查询评论内容 -->
+	<select id="selectCommentByName" parameterType="java.lang.String" resultType="com.it.po.Comment">
+		select * from comment
+		where user_name=#{_parameter} and note='0'
+	</select>
+	
+	
+	<!-- 查询笔记或者评论是否存在是否存在-->
+	<select id="isExist" parameterType="com.it.po.Comment" resultType="com.it.po.Comment">
+		select * from comment
+		where comment.flag=#{flag}and comment.user_name=#{user_name}  and note=#{note}
+		and <if test="name==null">
+		comment.name is null
+		</if>
+		<if test="name!=null">
+		comment.name=#{name}
+		</if>
+	</select>
+	
+	<!-- 添加书籍的评论或笔记 -->
+	<insert id="add" parameterType="com.it.po.Comment">
+	insert into comment (flag, name,
+      user_name, time, note, 
+      message)
+    values ( #{flag,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{user_name,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{note,jdbcType=VARCHAR}, 
+      #{message,jdbcType=LONGVARCHAR})
+	</insert>
+	
+	<!-- 根据评论查询热门用户排行榜 -->
+	<select id="usersort" resultType="java.lang.String">
+		select user_name from `comment`
+		GROUP BY user_name 
+		ORDER BY count(user_name) DESC
+	</select>
+ </mapper>

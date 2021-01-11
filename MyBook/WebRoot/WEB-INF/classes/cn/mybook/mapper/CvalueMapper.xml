@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mybook.mapper.CvalueMapper" >
+	<!-- 查询内容 -->
+	<select id="selectValue" parameterType="java.lang.String" resultType="cn.mybook.po.Cvalue">
+	select * from cvalue
+	where chapter_value=#{chapter_value}
+	</select>
+	<!-- 查找评论 -->
+	<select id="selectflag" parameterType="java.lang.String" resultType="java.lang.String">
+		select valueflag from cvalue
+		where value=#{value}
+	</select>
+	<!-- 通过章节flag查找书籍的flag -->
+	<select id="selectbookflag" parameterType="java.lang.String" resultType="string">
+	SELECT chapter.chapterflag FROM `cvalue`,chapter
+		WHERE
+			cvalue.valueflag = #{_parameter}
+		AND cvalue.chapter_value = chapter.`value`
+	</select>
+ </mapper>

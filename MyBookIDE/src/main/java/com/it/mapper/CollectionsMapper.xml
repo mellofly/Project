@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.it.mapper.CollectionsMapper" >
+	<!-- 查询用户的书架 -->
+	<select id="selectListByUser" parameterType="java.lang.String" resultType="com.it.po.Collections">
+		select * from collections
+		where user_name=#{name}
+	</select>
+	<!-- 查询用户是否订阅 -->
+	<select id="selectUser" parameterType="com.it.po.Collections" resultType="com.it.po.Collections">
+		select * from collections
+		where user_name=#{user_name} And book_name=#{book_name}
+	</select>
+	<!-- 添加书架 -->
+	<insert id="insert" parameterType="com.it.po.Collections" >
+    insert into collections (user_name,book_name,personalityname,chapter_flag
+      )
+    values ( #{userName,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR},
+    #{personalityname,jdbcType=VARCHAR}, #{chapter_flag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <!-- 更新用户的书签 -->
+  <update id="updatebookmark" parameterType="com.it.po.Collections" >
+	  update collections
+	    set user_name = #{user_name,jdbcType=VARCHAR},
+	      book_name = #{book_name,jdbcType=VARCHAR},
+	      personalityname = #{personalityname,jdbcType=VARCHAR},
+	      chapter_flag = #{chapter_flag,jdbcType=VARCHAR}
+	    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- 移除书架 -->
+  <delete id="delect" parameterType="com.it.po.Collections">
+  	delete from collections
+  	where user_name=#{user_name}and book_name=#{book_name}
+  </delete>
+  <!-- 查找排行榜 -->
+  <select id="selectSort" resultType="com.it.po.Sort">
+  	select book_name,bookflag from collections,book
+	where book.`name`=collections.book_name
+	GROUP BY book_name 
+	ORDER BY count(book_name) DESC
+  </select>
+</mapper>
