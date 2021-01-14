@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
+		
+	<!-- 用户管理的service -->	
+	<bean id="userService" class="com.it.service.impl.UserServiceImpl"></bean>
+	<bean id="bookService" class="com.it.service.impl.BookServiceImpl"></bean>
+	<bean id="collectionsService" class="com.it.service.impl.CollectionsServiceImpl"></bean>
+	<bean id="chapterService" class="com.it.service.impl.ChapterServiceImpl"></bean>
+	<bean id="cvalueService" class="com.it.service.impl.CvalueServiceImpl"></bean>
+	<bean id="commentService" class="com.it.service.impl.CommentServiceImpl"></bean>
+	<bean id="friendService" class="com.it.service.impl.FriendServiceImpl"></bean>
+</beans>

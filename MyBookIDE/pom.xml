@@ -140,7 +140,17 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.26</version>
     </dependency>
+    <dependency>
+        <groupId>commons-pool</groupId>
+        <artifactId>commons-pool</artifactId>
+      <version>1.3</version>
+    </dependency>
 
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.2.2</version>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -156,6 +166,7 @@
 
   </dependencies>
 
+  <!-- 自动添加的 -->
   <build>
     <finalName>MyBookIDE</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
