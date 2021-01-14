@@ -8,9 +8,6 @@
          version="3.1">
   <display-name>Archetype Created Web Application</display-name>
   <!-- welcome pages -->
-  <welcome-file-list>
-    <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-  </welcome-file-list>
 
   <!-- 配置springmvc DispatcherServlet -->
   <servlet>
@@ -19,21 +16,29 @@
     <init-param>
       <!-- 配置dispatcher.xml作为MVC的配置文件 -->
       <param-name>contextConfigLocation</param-name>
-      <param-value>WEB-INF/dispatcher-servlet.xml</param-value>
+      <param-value>classpath:/spring/springmvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>*.action</url-pattern>
   </servlet-mapping>
   <!-- 把applicationContext.xml加入到配置文件中 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/applicationContext.xml</param-value>
+    <param-value>classpath:/spring/applicationContext-*.xml</param-value>
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
 
 </web-app>
