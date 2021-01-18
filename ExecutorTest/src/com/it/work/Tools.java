@@ -10,6 +10,10 @@ public class Tools {
         mapValue.putAll(value);
     }
     public String getListValue(String indexvalue){
+        if(indexvalue.endsWith("abc")){
+            throw new RuntimeException();
+        }
+
         ArrayList<String> reValue = new ArrayList<String>();
         reValue.add("操作方式为：indexvalue"+indexvalue+";");
         for(int i=0; i<indexvalue.length();i++){

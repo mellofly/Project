@@ -15,7 +15,11 @@ public class Main {
         //打印还款方式：
         Tools wkTool = new Tools();
         wkTool.setList(makeMap());
-        Tool.SPrint(wkTool.getListValue("c486a973512b0"));
+        try {
+            Tool.SPrint(wkTool.getListValue("c486a973512b0"));
+        }catch (Exception e){
+            Tool.SPrint(e.getMessage());
+        }
 
     }
 
