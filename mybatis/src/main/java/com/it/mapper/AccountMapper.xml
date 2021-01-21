@@ -16,8 +16,19 @@
         #{id}：其中id表示接收输入的参数，参数名称就是id，如果输入参数是简单类型，#{}中的参数名可以任意，可以value或其他名称
         resultType:指定SQL输出结果的所映射的java对象类型，select指定resultType表示将单挑记录映射成的java对象。
         -->
-<select id ="findAccountById" parameterType="int" resultType="com.it.po.Account">
-        select * from account where id=#{id}
-</select>
-        <!-- -->
+        <select id ="findAccountById" parameterType="int" resultType="com.it.po.Account">
+                select * from account where id=#{id}
+        </select>
+        <!-- 根据输入的动态信息查询数据-->
+        <select id="findAccountsByMessage" parameterType="com.it.po.Account" resultType="com.it.po.Account">
+            select * from Account
+            <where>
+                    <if test="sex!=null and sex!=''">
+                            and account.sex=#{sex}
+                    </if>
+                    <if test="name!=null and name!=''">
+                            and account.name like '%${name}%'
+                    </if>
+            </where>
+        </select>
 </mapper>
