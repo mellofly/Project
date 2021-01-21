@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- namespace命名空间，作用就是对SQL进行分类化管理，理解SQL隔离。
-        注意：当使用mapper代理方法开发，namespace有特殊重要的作用。  -->
-<mapper namespace="test">
+        注意：当使用mapper代理方法开发，namespace有特殊重要的作用,需要与对应的mapper接口保持一致。  -->
+<mapper namespace="com.it.mapper.AccountMapper">
 <!-- 在映射文件中配置很多SQL语句 -->
 <!-- 需求：通过id查询用户表的记录 -->
 <!-- 通过select执行数据库查询

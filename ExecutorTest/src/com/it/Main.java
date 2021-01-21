@@ -13,6 +13,7 @@ public class Main {
         //String value = Tool.StringSub("abcasd",1,3);
         //Tool.SPrint(value);
         //打印还款方式：
+
         Tools wkTool = new Tools();
         wkTool.setList(makeMap());
         try {

@@ -19,7 +19,6 @@
     </environments>
 
     <mappers>
-
-        <mapper resource="mapper/AccountMapper.xml"></mapper>
+        <mapper resource="sqlmap/AccountMapper.xml"/>
     </mappers>
 </configuration>
