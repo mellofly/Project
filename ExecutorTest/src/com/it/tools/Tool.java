@@ -1,5 +1,9 @@
 package com.it.tools;
 
+import com.it.po.People;
+
+import java.util.Calendar;
+
 /**
  * 工具类
  */
@@ -21,5 +25,17 @@ public  class Tool {
      */
     public static void SPrint(String message){
         System.out.println("打印内容："+message);
+    }
+
+    /**
+     * 计算用户的年龄
+     * @param p
+     */
+    public static void computeAge(People p){
+        Calendar begin = p.getBirthday();
+        Calendar end = Calendar.getInstance();
+        int week = begin.compareTo(end);
+        p.setAge(week);
+        Tool.SPrint(String.valueOf(week));
     }
 }

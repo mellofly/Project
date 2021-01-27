@@ -21,4 +21,6 @@ public interface AccountMapper {
      * @throws Exception
      */
     public List<Account> findAccountsByMessage(Account account)throws Exception;
+
+
 }

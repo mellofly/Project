@@ -1,8 +1,13 @@
 package com.it.po;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Account {
+
+    public Account(int id,String name,char sex,Calendar birth,){
+
+    }
     //用户id
     private int id;
     //用户名称
@@ -10,9 +15,9 @@ public class Account {
     //用户性别
     private char sex;
     //用户出生日期
-    private Date birth;
+    private Calendar birth;
     //维护日期
-    private Date deFendDate;
+    private Calendar deFendDate;
     //维护人员
     private String deFendName;
 

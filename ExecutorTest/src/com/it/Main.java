@@ -1,8 +1,11 @@
 package com.it;
 
+import com.it.po.People;
 import com.it.tools.Tool;
 import com.it.work.Tools;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -14,14 +17,19 @@ public class Main {
         //Tool.SPrint(value);
         //打印还款方式：
 
-        Tools wkTool = new Tools();
+        /*Tools wkTool = new Tools();
         wkTool.setList(makeMap());
         try {
             Tool.SPrint(wkTool.getListValue("c486a973512b0"));
         }catch (Exception e){
             Tool.SPrint(e.getMessage());
-        }
-
+        }*/
+        Calendar cDate = Calendar.getInstance();
+        cDate.set(2021,1,1);
+        People p = new People("小明",14,cDate);
+        Tool.SPrint(p.toString());
+        Tool.computeAge(p);
+        Tool.SPrint(p.toString());
     }
 
     public static Map<String,String> makeMap(){
@@ -41,4 +49,5 @@ public class Main {
         mpValue.put("c","应收费用");
         return mpValue;
     }
+
 }

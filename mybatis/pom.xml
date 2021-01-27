@@ -6,7 +6,7 @@
     <groupId>com.it</groupId>
     <artifactId>mybatis</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <modules></modules>
 
     <dependencies>
         <!-- mybatis包-->
