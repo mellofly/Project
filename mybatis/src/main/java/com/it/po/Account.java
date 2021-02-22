@@ -5,8 +5,13 @@ import java.util.Date;
 
 public class Account {
 
-    public Account(int id,String name,char sex,Calendar birth,){
-
+    public Account(int id,String name,char sex,Calendar birth,Calendar deFendDate,String deFendName){
+        this.id=id;
+        this.name=name;
+        this.sex=sex;
+        this.birth=birth;
+        this.deFendDate=deFendDate;
+        this.deFendName=deFendName;
     }
     //用户id
     private int id;
@@ -45,19 +50,19 @@ public class Account {
         this.sex = sex;
     }
 
-    public Date getBirth() {
+    public Calendar getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(Calendar birth) {
         this.birth = birth;
     }
 
-    public Date getDeFendDate() {
+    public Calendar getDeFendDate() {
         return deFendDate;
     }
 
-    public void setDeFendDate(Date deFendDate) {
+    public void setDeFendDate(Calendar deFendDate) {
         this.deFendDate = deFendDate;
     }
 

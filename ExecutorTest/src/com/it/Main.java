@@ -24,12 +24,14 @@ public class Main {
         }catch (Exception e){
             Tool.SPrint(e.getMessage());
         }*/
-        Calendar cDate = Calendar.getInstance();
+
+       /* Calendar cDate = Calendar.getInstance();
         cDate.set(2021,1,1);
         People p = new People("小明",14,cDate);
         Tool.SPrint(p.toString());
         Tool.computeAge(p);
-        Tool.SPrint(p.toString());
+        Tool.SPrint(p.toString());*/
+        Tool.SPrint(String.format("11111111111___%s","redis数据结构及数据编码"));
     }
 
     public static Map<String,String> makeMap(){
