@@ -1,8 +1,43 @@
 {
   "pages": [
-    "pages/index/index",
+    "page/homepage/index",
+    "pages/homepage/index",
+    "page/catepage/index",
+    "page/shoppingpage/index",
+    "page/minepage/index",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [
+      {"pagePath": "page/homepage/index",
+        "iconPath": "@iconPathhome",
+        "selectedIconPath": "@selectedIconPathHome",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/catepage/index",
+        "iconPath": "@iconPathCate",
+        "selectedIconPath": "@selectedIconPathCate",
+        "text": "全部分类"
+      },
+      {
+        "pagePath": "page/shoppingpage/index",
+        "iconPath": "@iconPathShopping",
+        "selectedIconPath": "@selectedIconPathShopping",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "page/minepage/index",
+        "iconPath": "@iconPathMyself",
+        "selectedIconPath": "@selectedIconPathMyself",
+        "text": "我的"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0ff",
@@ -10,5 +45,6 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json"
 }
