@@ -4,7 +4,7 @@
     "pages/homepage/index",
     "page/catepage/index",
     "page/shoppingpage/index",
-    "page/minepage/index",
+    "page/userpage/index",
     "pages/logs/logs"
   ],
   "tabBar": {
@@ -31,9 +31,9 @@
         "text": "购物车"
       },
       {
-        "pagePath": "page/minepage/index",
-        "iconPath": "@iconPathMyself",
-        "selectedIconPath": "@selectedIconPathMyself",
+        "pagePath": "page/userpage/index",
+        "iconPath": "@iconPathUser",
+        "selectedIconPath": "@selectedIconPathUser",
         "text": "我的"
       }
     ]

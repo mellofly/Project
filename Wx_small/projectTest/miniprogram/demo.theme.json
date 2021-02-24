@@ -15,8 +15,8 @@
     "selectedIconPathCate": "image/cate.png",
     "iconPathShopping": "image/shopping_hd.png",
     "selectedIconPathShopping": "image/shopping.png",
-    "iconPathMyself": "image/myself_hd.png",
-    "selectedIconPathMyself": "image/myself.png",
+    "iconPathUser": "image/user_hd.png",
+    "selectedIconPathUser": "image/user.png",
 
     "backgroundTextStyle": "dark"
 },
@@ -37,8 +37,8 @@
     "selectedIconPathCate": "image/cate.png",
     "iconPathShopping": "image/shopping_hd.png",
     "selectedIconPathShopping": "image/shopping.png",
-    "iconPathMyself": "image/myself_hd.png",
-    "selectedIconPathMyself": "image/myself.png",
+    "iconPathUser": "image/user_hd.png",
+    "selectedIconPathUser": "image/user.png",
 
     "backgroundTextStyle": "light"
   }

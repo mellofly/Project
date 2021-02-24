@@ -1,14 +1,12 @@
 // index.ts
 // 获取应用实例
-//const app = getApp<IAppOption>()
+const app = getApp<IAppOption>()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    clickme: '看看我',
   },
   // 事件处理函数
   bindViewTap() {
@@ -43,7 +41,20 @@ Page({
         },
       })
     }
+    // this.setData({
+    //   serch: this.search.bind(this)
+    // })
   },
+  // search(){
+  //   return new Promise((resolve:any,reject:any)=>{
+  //     setTimeout(()=> {
+  //       resolve([{text:'搜索结果', value:1},{text:'所有结果2',value:2}]),200
+  //     })
+  //   })
+  // },
+  // selectResult(e:any){
+  //   console.log('select result',e.detail)
+  // },
   getUserInfo(e: any) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -52,8 +63,5 @@ Page({
       hasUserInfo: true,
     })
   },
-  clickMe() {
-    this.setData({clickme: "hello"})
-    console.log(this.data.clickme);
-},
+  
 })
