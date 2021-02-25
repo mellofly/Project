@@ -41,7 +41,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0ff",
-    "navigationBarTitleText": "测试",
+    "navigationBarTitleText": "商店",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

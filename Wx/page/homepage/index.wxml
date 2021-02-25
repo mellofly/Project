@@ -1,0 +1,11 @@
+<!--page/homepage/index.wxml-->
+
+<view class="page">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+</view> 
+<view class="container">
+  <view>
+    <view ><open-data type="userAvatarUrl"></open-data></view>
+    <view><open-data type="userNickName"></open-data></view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "page/homepage/index",
+    "page/catepage/index",
+    "page/shoppingpage/index",
+    "page/userpage/index",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [
+      {"pagePath": "page/homepage/index",
+        "iconPath": "@iconPathhome",
+        "selectedIconPath": "@selectedIconPathHome",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/catepage/index",
+        "iconPath": "@iconPathCate",
+        "selectedIconPath": "@selectedIconPathCate",
+        "text": "全部分类"
+      },
+      {
+        "pagePath": "page/shoppingpage/index",
+        "iconPath": "@iconPathShopping",
+        "selectedIconPath": "@selectedIconPathShopping",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "page/userpage/index",
+        "iconPath": "@iconPathUser",
+        "selectedIconPath": "@selectedIconPathUser",
+        "text": "我的"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "demo.theme.json"
+}
