@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 处理器适配器
      所有处理器适配器都实现 HandlerAdapter接口-->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
 
     <!-- 配置Handler-->
-    <bean name="/queryUser.action" class="controller.UserController"/>
+    <!-- <bean name="/queryUser.action" class="controller.UserController"/>-->
+    <context:component-scan base-package="controller"></context:component-scan>
 
     <!-- 处理器映射器
     将bean的name作为url进行查找，需要在配置Handler时指定beanname(就是url)
     -->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+   <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
 
     <!-- 视图解析器
     解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包

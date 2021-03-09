@@ -1,16 +1,18 @@
 package com.it;
 
-import com.it.po.Account;
-import com.it.test.demo;
+import com.it.test.demotest;
 
-import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) throws Exception {
-        demo tes = new demo();
-        //tes.findUserByIdTest();
-        Account account = new Account();
-        account.setName("a");
-        tes.findUserByMessageTest(account);
+        demotest tes = new demotest();
+        Scanner scanner = new Scanner(System.in);
+        String s;
+        while(((s=scanner.next()).equals("over"))==false){
+            tes.findDemoTest(s);
+        }
+
     }
 }

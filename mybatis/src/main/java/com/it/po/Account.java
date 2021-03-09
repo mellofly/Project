@@ -5,14 +5,6 @@ import java.util.Date;
 
 public class Account {
 
-    public Account(int id,String name,char sex,Calendar birth,Calendar deFendDate,String deFendName){
-        this.id=id;
-        this.name=name;
-        this.sex=sex;
-        this.birth=birth;
-        this.deFendDate=deFendDate;
-        this.deFendName=deFendName;
-    }
     //用户id
     private int id;
     //用户名称
