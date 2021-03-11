@@ -7,9 +7,31 @@
   <groupId>com.it</groupId>
   <artifactId>springmvc</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+      <resources>
+        <resource>
+          <directory>src/main/java/com/it/</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+          <filtering>true</filtering>
+        </resource>
+      </resources>
+    </build>
+    <packaging>war</packaging>
 
   <dependencies>
+    <!-- 配置spring及springmvc相关 begin -->
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -60,7 +82,39 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    <!-- 配置spring及springmvc相关 end -->
+
+    <!-- 配置mybatis相关 begin -->
+    <!-- mybatis包-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.2.4</version>
+    </dependency>
+    <!-- mysql驱动包-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.26</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+    <!-- 配置mybatis相关 end -->
   </dependencies>
+
 
 
 </project>

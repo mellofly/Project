@@ -28,7 +28,7 @@
             <td>商品描述</td>
             <td>操作</td>
         </tr>
-        <c:forEach items="${userList}" var="item">
+        <c:forEach items="${accountList}" var="item">
             <tr>
                 <td> ${item.name}</td>
                 <td>${item.wx_id}</td>

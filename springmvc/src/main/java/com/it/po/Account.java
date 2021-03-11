@@ -1,9 +1,12 @@
 package com.it.po;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Calendar;
 
-public class User {
-    public User(int id, String wx_id, String name, String phone, char sex, Calendar birth, Calendar deFendDate, String deFendName){
+@Component
+public class Account {
+    /*public Account(int id, String wx_id, String name, String phone, char sex, Calendar birth, Calendar deFendDate, String deFendName){
         this.id=id;
         this.wx_id=wx_id;
         this.name=name;
@@ -12,7 +15,7 @@ public class User {
         this.birth=birth;
         this.deFendDate=deFendDate;
         this.deFendName=deFendName;
-    }
+    }*/
     //用户id
     private int id;
     //微信id
