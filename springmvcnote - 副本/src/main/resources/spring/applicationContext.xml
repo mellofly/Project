@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 处理器适配器
+     所有处理器适配器都实现 HandlerAdapter接口
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+
+    <!-- 配置Handler
+    <bean name="/queryUser.action" class="com.it.controller.UserController"/>-->
+
+    <!-- 处理器映射器
+    将bean的name作为url进行查找，需要在配置Handler时指定beanname(就是url)
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  -->
+
+    <!-- 视图解析器
+    解析jsp解析，默认使用jstl标签，classpath下的得有jstl的
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>-->
+
+    <!-- controller层操作 -->
+    <!-- 扫描注解bean-->
+    <context:component-scan base-package="com.it.controller"></context:component-scan>
+    <!-- springmc开启注解 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+</beans>

@@ -1,0 +1,11 @@
+<!--pages/catepage/index.wxml-->
+<view class='list' wx:for='{{list}}' wx:key='index' bindtap='tiao' data-mark='{{item.id}}'>
+      <view class='title'>{{item.title}}</view>
+      <view class='list-info'>
+          <image src='{{item.image}}'></image>
+          <view class='info'>
+            <view class='desc'>{{item.desc}}</view>
+            <view class="readnum"><text>{{item.readNum}}</text>次阅读</view>
+        </view>
+      </view>
+  </view>

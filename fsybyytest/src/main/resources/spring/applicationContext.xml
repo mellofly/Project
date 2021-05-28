@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 视图解析器
+    解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包
+    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+
+    <!-- 注解映射器 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!--注解适配器 -->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+    <!-- 以上两个注解可以使用 下面配置替换
+    <mvc:annotation-driven></mvc:annotation-driven>-->
+    <!-- 对于注解的Handler可以单个配置，实际开发中建议使用组件扫描
+    <bean class="com.it.controller.UserController"></bean>-->
+    <!-- 组件扫描器 扫描controller注解，多个包中间使用半角逗号分隔 -->
+    <context:component-scan base-package="com.it.controller"/>
+</beans>

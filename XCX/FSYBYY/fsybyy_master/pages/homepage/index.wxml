@@ -1,0 +1,6 @@
+<!--page/homepage/index.wxml-->
+
+<view class="page">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+</view> 
+
